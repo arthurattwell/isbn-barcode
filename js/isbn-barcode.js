@@ -35,7 +35,12 @@ function getISBN() {
 			font: "Arial, Helvetica",
 			fontSize: 18,
 			height: 85,
-			textMargin: 0
+			textMargin: 0,
+			margin: 0,
+			marginTop: 0,
+			marginRight: 0,
+			marginBottom: 1,
+			marginLeft: 0
 		})
 		.render();
 
