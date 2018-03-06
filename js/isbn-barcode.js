@@ -26,7 +26,8 @@ function saveBarcode(isbn) {
 // to make a barcode out of it.
 function getISBN() {
 
-	var isbn = prompt("Enter ISBN (no hyphens)", "978000000002");
+	var isbn = prompt("Enter ISBN", "978000000002");
+	isbn = isbn.replace(/-/g, "");
 
 	JsBarcode("#barcode")
 		.EAN13(isbn, {
