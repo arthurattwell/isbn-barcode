@@ -1,0 +1,43 @@
+body {
+	font-family: "Arimo", sans-serif;
+	font-size: 1.2em;
+	margin: 2em auto;
+	text-align: center;
+}
+.wrapper {
+	margin: auto;
+}
+p {
+	font-size: 0.8em;
+}
+form {
+	margin: 3em 0;
+}
+input, label {
+	font-size: 1.2em;
+	margin: 1em 0.5em 0 0;
+	padding: 0.5em;
+}
+input[type="button"], input[type="text"] {
+	border: 1px solid #ccc;
+}
+input[type="button"]:hover, input[type="text"]:hover {
+	box-shadow: 0 0 1px #ccc;
+}
+label {
+	padding: 0;
+}
+.barcode {
+	margin-bottom: 2em;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	padding: 1em 0;
+	text-align: center;
+	width: 100%;
+	border-top: 1px solid #ccc;
+}
+a {
+	text-decoration: none;
+}

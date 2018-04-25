@@ -19,34 +19,39 @@ function saveSVG(svgEl, name) {
 // Add the save button
 function saveBarcode(isbn) {
 	var saveDiv = document.getElementById("save");
-	saveDiv.innerHTML = '<button type="button" onclick="saveSVG(barcode, \'' + isbn + '.svg\')">Save SVG</button>';
+	saveDiv.innerHTML = '<input type="button" value="Save SVG" onclick="saveSVG(barcode, \'' + isbn + '.svg\')" />';
 }
 
 // Ask the user for the ISBN, and ask JsBarcode
 // to make a barcode out of it.
-function getISBN() {
+function getISBN(isbn) {
 
-	var isbn = prompt("Enter ISBN", "978000000002");
+	var isbn = document.getElementById('isbn').value;
 	isbn = isbn.replace(/-/g, "");
 
-	JsBarcode("#barcode")
-		.EAN13(isbn, {
-			format: "EAN13",
-			font: "Arial, Helvetica",
-			fontSize: 18,
-			height: 85,
-			textMargin: 0,
-			margin: 0,
-			marginTop: 0,
-			marginRight: 0,
-			marginBottom: 1,
-			marginLeft: 0
-		})
-		.render();
+	try {
 
-	saveBarcode(isbn);
+		JsBarcode("#barcode")
+			.EAN13(isbn, {
+				format: "EAN13",
+				font: "Arial, Helvetica",
+				fontSize: 18,
+				height: 85,
+				textMargin: 0,
+				margin: 0,
+				marginTop: 0,
+				marginRight: 0,
+				marginBottom: 1,
+				marginLeft: 0
+			})
+			.render();
+
+		saveBarcode(isbn);
+
+	} catch(err) {
+
+		alert('Sorry, that didn\'t work. Is that ISBN valid?');
+
+	}
 
 }
-
-// When the page loads, run the getISBN function
-window.onload = getISBN();

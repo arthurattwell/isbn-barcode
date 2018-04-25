@@ -2,23 +2,58 @@
 <html>
 
 	<head>
-		<title>ISBN barcode creator</title>
+		<title>ISBN-barcode creator</title>
 		<meta charset="UTF-8">
 		<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-27798626-6"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-27798626-6');
+		</script>
+
 	</head>
 
 	<body>
 
-		<!--Made with https://github.com/lindell/JsBarcode-->
+		<div class="wrapper">
 
-		<!--Create a blank SVG for the barcode to be written into-->
-		<svg id="barcode" id="svg"></svg>
+			<h1>ISBN-barcode creator</h1>
 
-		<!-- Create a div for teh save button to appear in. -->
-		<div id="save"></div>
+			<!-- A form for capturing a user's ISBN -->
+			<form>
+				<label for="isbn">Enter ISBN</label>
+				<input type="text" id="isbn" value="9780000000002" placeholder="9780000000002">
+				<input type="button" value="Get barcode" onclick="getISBN()" />
+			</form>
 
-		<script src="js/JsBarcode.ean-upc.min.js"></script>
-		<script src="js/isbn-barcode.js"></script>
+			<div class="barcode">
+
+				<!-- Create a blank SVG for the barcode to be written into -->
+				<svg id="barcode" id="svg"></svg>
+
+			</div>
+
+			<!-- Create a div for the save button to appear in -->
+			<div id="save"></div>
+
+			<!-- Source -->
+			<div class="footer">
+				<a href="https://github.com/arthurattwell/isbn-barcode">Open source code</a>
+			</div>
+
+			<!-- Thanks for this script, https://github.com/lindell/JsBarcode -->
+			<script src="js/JsBarcode.ean-upc.min.js"></script>
+
+			<!-- Our ISBN-creation mechanism -->
+			<script src="js/isbn-barcode.js"></script>
+
+		</div>
 
 	</body>
 
