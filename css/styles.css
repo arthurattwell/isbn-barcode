@@ -11,7 +11,7 @@ p {
 	font-size: 0.8em;
 }
 form {
-	margin: 3em 0;
+	margin: 1em 0 2em 0;
 }
 input, label {
 	font-size: 1.2em;
@@ -28,15 +28,14 @@ label {
 	padding: 0;
 }
 .barcode {
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 }
 .footer {
-	position: absolute;
-	bottom: 0;
 	padding: 1em 0;
 	text-align: center;
 	width: 100%;
 	border-top: 1px solid #ccc;
+	margin-top: 2em;
 }
 a {
 	text-decoration: none;
